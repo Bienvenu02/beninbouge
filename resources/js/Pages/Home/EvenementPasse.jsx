@@ -41,7 +41,7 @@ const pastEvents = [
 
 export default function EvenementPasse() {
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-24 bg-white dark:bg-slate-900 transition-colors duration-300 rounded-xl shadow-lg p-8">
 
             {/* En-tête */}
             <div
@@ -49,7 +49,7 @@ export default function EvenementPasse() {
                 data-aos="fade-up"
             >
                 <h2 className="text-xl md:text-2xl font-bold">
-                    Événements Passés
+                    Événements Récents
                 </h2>
                 <Link
                     href="/events"

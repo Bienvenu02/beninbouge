@@ -6,7 +6,7 @@ import Footer from "../Components/Footer";
 export default function AppLayout({ children }) {
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div  className="min-h-screen bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
             <Head>
                 <title>EventMaster - Votre plateforme d'événements au Bénin</title>
                 <meta name="description" content="Découvrez et créez des événements au Bénin avec EventMaster, votre plateforme d'événements incontournable." />

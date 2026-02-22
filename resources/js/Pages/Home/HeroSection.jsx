@@ -33,7 +33,7 @@ export default function HeroSection() {
 
     return (
         // hauteur fixe sur la section, sinon les absolute n'ont pas de référence
-        <section className="relative text-white overflow-hidden min-h-[600px] md:min-h-[700px] md:pt-20 p-8">
+        <section className="relative bg-white dark:bg-slate-900 text-white overflow-hidden min-h-[600px] md:min-h-[700px] md:pt-20 p-8">
 
             {/* Skeleton — fond sombre pendant le chargement */}
             <div className={`absolute inset-0 bg-gray-900 transition-opacity duration-700 z-10 ${

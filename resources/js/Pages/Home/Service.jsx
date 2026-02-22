@@ -28,7 +28,7 @@ const items = [
 
 export default function AboutSection() {
     return (
-        <section className="relative py-14 overflow-hidden bg-gradient-to-br from-[#008651] via-[#00a562] to-[#7ddc6e]">
+        <section className="relative pt-14 overflow-hidden bg-gradient-to-br from-[#004d2e] via-[#006b3e] to-[#009a55] dark:bg-slate-800 dark:bg-none pb-20">
 
             {/* Cercles décoratifs en arrière-plan */}
             <div className="absolute top-[-80px] right-[-80px] w-72 h-72 bg-white/10 rounded-full blur-2xl" />
