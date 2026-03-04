@@ -29,13 +29,11 @@ const items = [
 export default function AboutSection() {
     return (
         <section className="relative pt-14 overflow-hidden bg-gradient-to-br from-[#004d2e] via-[#006b3e] to-[#009a55] dark:bg-slate-950 dark:bg-none pb-20">
-
             {/* Cercles décoratifs en arrière-plan */}
             <div className="absolute top-[-80px] right-[-80px] w-72 h-72 bg-white/10 rounded-full blur-2xl" />
             <div className="absolute bottom-[-60px] left-[-60px] w-56 h-56 bg-white/10 rounded-full blur-2xl" />
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
                 {/* Titre */}
                 <h2
                     className="text-2xl md:text-3xl font-extrabold text-white text-center mb-8 italic"
@@ -45,7 +43,6 @@ export default function AboutSection() {
                 </h2>
 
                 <div className="flex flex-col md:flex-row items-center gap-12">
-
                     {/* Image gauche */}
                     <div
                         className="w-full md:w-1/2"

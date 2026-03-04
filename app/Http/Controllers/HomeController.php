@@ -10,4 +10,9 @@ class HomeController extends Controller
     {
         return Inertia::render('Home/Home');
     }
+
+    public function dashboard()
+    {
+        return Inertia::render('Admin/Dashboard/Dashboard');
+    }
 }

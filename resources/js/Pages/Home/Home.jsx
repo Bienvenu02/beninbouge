@@ -1,26 +1,16 @@
-import { Head, Link } from "@inertiajs/react";
+import { Head } from "@inertiajs/react";
 import AppLayout from "../../Layouts/AppLayout";
-import { useEffect } from "react";
-import { animate } from "animejs";
-import HeroSection from "./HeroSection";
-import RechercheSection from "./RechercheSection";
-import EvenementPasse from "./EvenementPasse";
-import Service from "./Service";
-import NewsletterSection from "./Newsletter";
-import FormContact from "./FormContact";
+import HeroSection from "./components/HeroSection";
+import RechercheSection from "./components/RechercheSection";
+import EvenementPasse from "./components/EvenementPasse";
+import Service from "./components/Service";
+import NewsletterSection from "./components/Newsletter";
+import FormContact from "./components/FormContact";
 
 export default function Home() {
-
-    useEffect(() => {
-        animate(".mon-element", {
-            translateY: 10,
-            duration: 1000,
-        });
-    }, []);
-
     return (
         <AppLayout>
-            <Head title="Accueil - EventMaster" />
+            <Head title="Accueil - Benin Bouge" />
 
             {/* Hero Section */}
             <HeroSection />
@@ -39,7 +29,6 @@ export default function Home() {
 
             {/* Formulaire de contact */}
             <FormContact />
-            
         </AppLayout>
     );
 }

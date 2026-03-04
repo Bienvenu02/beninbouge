@@ -42,7 +42,6 @@ const pastEvents = [
 export default function EvenementPasse() {
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-24 bg-white dark:bg-slate-900 transition-colors duration-300 rounded-xl shadow-lg p-8">
-
             {/* En-tête */}
             <div
                 className="flex justify-between items-center mb-8"

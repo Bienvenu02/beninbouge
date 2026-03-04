@@ -13,8 +13,23 @@ export default function NewsletterSection() {
 
     useEffect(() => {
         if (blobRef1.current && blobRef2.current) {
-            gsap.to(blobRef1.current, { x: 30, y: -20, duration: 4, repeat: -1, yoyo: true, ease: "sine.inOut" });
-            gsap.to(blobRef2.current, { x: -20, y: 25, duration: 5, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1 });
+            gsap.to(blobRef1.current, {
+                x: 30,
+                y: -20,
+                duration: 4,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+            });
+            gsap.to(blobRef2.current, {
+                x: -20,
+                y: 25,
+                duration: 5,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: 1,
+            });
         }
     }, []);
 
@@ -34,7 +49,11 @@ export default function NewsletterSection() {
 
     const itemVariants = {
         hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+        },
     };
 
     return (
@@ -78,12 +97,16 @@ export default function NewsletterSection() {
             <div
                 ref={blobRef1}
                 className="pointer-events-none absolute -top-20 -left-20 w-80 h-80 rounded-full opacity-10 dark:opacity-5"
-                style={{ background: "radial-gradient(circle, #4ade80, #16a34a)" }}
+                style={{
+                    background: "radial-gradient(circle, #4ade80, #16a34a)",
+                }}
             />
             <div
                 ref={blobRef2}
                 className="pointer-events-none absolute -bottom-20 right-0 w-96 h-96 rounded-full opacity-10 dark:opacity-5"
-                style={{ background: "radial-gradient(circle, #86efac, #22c55e)" }}
+                style={{
+                    background: "radial-gradient(circle, #86efac, #22c55e)",
+                }}
             />
 
             {/* Barre top */}
@@ -99,9 +122,7 @@ export default function NewsletterSection() {
                     {/* Bloc texte */}
                     <div className="flex-1 max-w-xl">
                         <motion.div variants={itemVariants}>
-                            <span
-                                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800 transition-colors duration-300"
-                            >
+                            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800 transition-colors duration-300">
                                 <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse inline-block" />
                                 Newsletter
                             </span>
@@ -113,21 +134,31 @@ export default function NewsletterSection() {
                             style={{ letterSpacing: "-0.02em" }}
                         >
                             Restez connectés au{" "}
-                            <span style={{
-                                background: "linear-gradient(135deg, #16a34a, #4ade80)",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}>
+                            <span
+                                style={{
+                                    background:
+                                        "linear-gradient(135deg, #16a34a, #4ade80)",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                }}
+                            >
                                 Bénin
                             </span>{" "}
                             qui se transforme et qui Bouge
                         </motion.h2>
 
-                        <motion.p variants={itemVariants} className="text-base font-semibold text-gray-700 dark:text-gray-300 mb-3 transition-colors duration-300">
-                            Inscrivez-vous pour recevoir chaque mois des informations liées au Bénin qui Bouge
+                        <motion.p
+                            variants={itemVariants}
+                            className="text-base font-semibold text-gray-700 dark:text-gray-300 mb-3 transition-colors duration-300"
+                        >
+                            Inscrivez-vous pour recevoir chaque mois des
+                            informations liées au Bénin qui Bouge
                         </motion.p>
 
-                        <motion.p variants={itemVariants} className="text-sm text-gray-400 dark:text-gray-500 italic transition-colors duration-300">
+                        <motion.p
+                            variants={itemVariants}
+                            className="text-sm text-gray-400 dark:text-gray-500 italic transition-colors duration-300"
+                        >
                             Nous ne spammons pas ! Consultez notre{" "}
                             <a href="#" className="policy-link">
                                 politique de confidentialité
@@ -137,12 +168,18 @@ export default function NewsletterSection() {
                     </div>
 
                     {/* Bloc formulaire */}
-                    <motion.div variants={itemVariants} className="w-full lg:w-96">
+                    <motion.div
+                        variants={itemVariants}
+                        className="w-full lg:w-96"
+                    >
                         {submitted ? (
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                                transition={{
+                                    duration: 0.5,
+                                    ease: [0.22, 1, 0.36, 1],
+                                }}
                                 className="text-center py-10 px-8 rounded-2xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800"
                             >
                                 <div className="text-5xl mb-4">🎉</div>
@@ -150,11 +187,15 @@ export default function NewsletterSection() {
                                     Vous êtes inscrit(e) !
                                 </h3>
                                 <p className="text-green-600 dark:text-green-500 text-sm">
-                                    Bienvenue dans la communauté du Bénin qui Bouge.
+                                    Bienvenue dans la communauté du Bénin qui
+                                    Bouge.
                                 </p>
                             </motion.div>
                         ) : (
-                            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                            <form
+                                onSubmit={handleSubmit}
+                                className="flex flex-col gap-4"
+                            >
                                 <input
                                     type="email"
                                     required
@@ -168,7 +209,8 @@ export default function NewsletterSection() {
                                     style={{
                                         border: "1.5px solid",
                                         borderColor: "var(--input-border)",
-                                        boxShadow: "0 2px 12px rgba(34,197,94,0.08)",
+                                        boxShadow:
+                                            "0 2px 12px rgba(34,197,94,0.08)",
                                         fontFamily: "'Sora', sans-serif",
                                     }}
                                 />
@@ -178,33 +220,60 @@ export default function NewsletterSection() {
                                     disabled={loading}
                                     className="btn-inscription w-full py-4 rounded-2xl text-white font-bold text-sm tracking-wide"
                                     style={{
-                                        background: loading ? "#4ade80" : "linear-gradient(135deg, #16a34a 0%, #22c55e 100%)",
+                                        background: loading
+                                            ? "#4ade80"
+                                            : "linear-gradient(135deg, #16a34a 0%, #22c55e 100%)",
                                         fontFamily: "'Sora', sans-serif",
                                         letterSpacing: "0.04em",
-                                        cursor: loading ? "not-allowed" : "pointer",
+                                        cursor: loading
+                                            ? "not-allowed"
+                                            : "pointer",
                                     }}
                                 >
                                     {loading ? (
                                         <span className="flex items-center justify-center gap-2">
-                                            <svg className="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24" fill="none">
-                                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                                            <svg
+                                                className="animate-spin h-4 w-4 text-white"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <circle
+                                                    className="opacity-25"
+                                                    cx="12"
+                                                    cy="12"
+                                                    r="10"
+                                                    stroke="currentColor"
+                                                    strokeWidth="4"
+                                                />
+                                                <path
+                                                    className="opacity-75"
+                                                    fill="currentColor"
+                                                    d="M4 12a8 8 0 018-8v8z"
+                                                />
                                             </svg>
                                             Inscription en cours…
                                         </span>
-                                    ) : "Inscription ici"}
+                                    ) : (
+                                        "Inscription ici"
+                                    )}
                                 </button>
                             </form>
                         )}
 
                         {/* Trust badges */}
-                        <motion.div variants={itemVariants} className="mt-6 flex items-center gap-6 justify-center">
+                        <motion.div
+                            variants={itemVariants}
+                            className="mt-6 flex items-center gap-6 justify-center"
+                        >
                             {[
                                 { icon: "🔒", text: "Données sécurisées" },
                                 { icon: "📭", text: "Sans spam" },
                                 { icon: "✉️", text: "1x / mois" },
                             ].map(({ icon, text }) => (
-                                <div key={text} className="flex flex-col items-center gap-1">
+                                <div
+                                    key={text}
+                                    className="flex flex-col items-center gap-1"
+                                >
                                     <span className="text-base">{icon}</span>
                                     <span className="text-xs text-gray-400 dark:text-gray-500 font-medium whitespace-nowrap transition-colors duration-300">
                                         {text}
