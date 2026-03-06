@@ -1,0 +1,55 @@
+services:
+  - type: web
+    name: beninbouge
+    runtime: php
+    region: ohio
+    plan: free
+    buildCommand: |
+      # Installation des dépendances PHP
+      composer install --no-dev --optimize-autoloader
+
+      # Installation des dépendances Node.js
+      npm install
+
+      # Build des assets
+      npm run build
+
+      # Configuration des permissions
+      chmod -R 775 storage bootstrap/cache
+    startCommand: |
+      php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        value: https://beninbouge.onrender.com
+      - key: APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        fromDatabase:
+          name: beninbouge-db
+          property: host
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        fromDatabase:
+          name: beninbouge-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: beninbouge-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: beninbouge-db
+          property: password
+
+databases:
+  - name: beninbouge-db
+    databaseName: beninbouge
+    plan: free
+    region: ohio
